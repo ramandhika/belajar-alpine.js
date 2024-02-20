@@ -11,47 +11,24 @@
                 justify-content: center;
                 align-items: center;
                 height: 300px;
-                background-color: #2f2f2f;
-            }
-
-            .container > span {
-                margin-left: 20px;
-                margin-right: 20px;
-                font-size: 50px;
-                color: white;
-            }
-
-            .container > p {
-                margin-left: 20px;
-                margin-right: 20px;
-                font-size: 50px;
-                color: white;
-            }
-
-            .container > button {
-                font-size: 50px;
-                padding: 2%;
-                border-radius: 5px;
             }
         </style>
     </head>
     <body>
-        <div x-data=" { hitung:0 } " class="container">
-            <button @click="hitung--">-</button>
-            <span x-text="hitung">0</span>
-            <button @click="hitung++">+</button>
-        </div>
-        <div x-data="{ nama : 'Ramandhika' }" class="container">
-            <span x-text="nama"></span>
-        </div>
-        <div
-            x-data="{ 
-            nama: 'Ramandhika Ilham Pratama',
-            umur: '22'}"
-            class="container"
-        >
-            <p>Nama : <span x-text="nama"></span></p>
-            <p>Umur : <span x-text="umur"></span></p>
+        <div class="container" x-data>
+            <ul>
+                <template x-for="nm in $store.mahasiswa.nama">
+                    <li x-text="nm"></li>
+                </template>
+            </ul>
         </div>
     </body>
 </html>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('mahasiswa', {
+            tahun: 2024,
+            nama: ['ramandhika', 'dimas', 'adit'],
+        });
+    });
+</script>
