@@ -5,6 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Alpine.Js</title>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <style>
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+                background-color: #2f2f2f;
+            }
+
+            .container > span {
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 50px;
+                color: white;
+            }
+
+            .container > button {
+                font-size: 50px;
+                padding: 2%;
+                border-radius: 5px;
+            }
+        </style>
     </head>
-    <body></body>
+    <body>
+        <div x-data=" { hitung:0 } " class="container">
+            <button @click="hitung--">-</button>
+            <span x-text="hitung">0</span>
+            <button @click="hitung++">+</button>
+        </div>
+    </body>
 </html>
