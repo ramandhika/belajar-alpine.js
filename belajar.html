@@ -16,19 +16,7 @@
     </head>
     <body>
         <div class="container" x-data>
-            <ul>
-                <template x-for="nm in $store.mahasiswa.nama">
-                    <li x-text="nm"></li>
-                </template>
-            </ul>
+            <button x-data @click="alert('Tombol Dipencet Slur')">Klik Tombol dong</button>
         </div>
     </body>
 </html>
-<script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.store('mahasiswa', {
-            tahun: 2024,
-            nama: ['ramandhika', 'dimas', 'adit'],
-        });
-    });
-</script>
