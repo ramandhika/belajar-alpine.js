@@ -16,35 +16,14 @@
             <button
                 @click="open = !open"
                 x-text="open ? 'Tutup' : 'Buka'"
-                class="py-2 px-5 bg-slate-600 text-white rounded-md"
+                x-bind:class="open ? 'bg-slate-600' : 'border border-red-600 text-black bg-red-200 font-bold'"
+                class="py-2 px-5 text-white rounded-md"
             >
                 Buka
             </button>
             <div
                 x-show="open"
-                x-transition:enter.duration.700ms
-                x-transition:leave.duration.500ms
-                class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white"
-            >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolor perferendis distinctio voluptate
-                nulla, eum magni officia laudantium voluptates obcaecati minima nisi corporis quo eveniet ab dolorem
-                necessitatibus repellendus nihil.
-            </div>
-        </div>
-        <div
-            x-data="{ open: false }"
-            class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow"
-        >
-            <button
-                @click="open = !open"
-                x-text="open ? 'Tutup' : 'Buka'"
-                class="py-2 px-5 bg-slate-600 text-white rounded-md"
-            >
-                Buka
-            </button>
-            <div
-                x-show="open"
-                x-transition:enter.origin.bottom.right.duration.2000ms
+                x-transition:enter.origin.bottom.right.duration.700ms
                 x-transition:leave.origin.top.left.duration.500ms
                 class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white"
             >
