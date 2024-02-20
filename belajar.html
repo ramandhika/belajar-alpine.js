@@ -4,19 +4,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Alpine.Js</title>
+        <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <style>
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 300px;
-            }
-        </style>
+        <style></style>
     </head>
     <body>
-        <div class="container" x-data>
-            <button x-data @click="alert('Tombol Dipencet Slur')">Klik Tombol dong</button>
+        <div
+            class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow"
+            x-data="{ nama:'Ramandhika Ilham Pratama', angka: 20 }"
+        >
+            <h1
+                class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent drop-shadow-sm"
+            >
+                Halo , <span x-text="nama"></span> Angka <span x-text="angka"></span> adalah bilangan :
+                <span x-text="angka % 2 === 0 ? 'Genap' : 'Ganjil'"></span>
+            </h1>
         </div>
     </body>
 </html>
