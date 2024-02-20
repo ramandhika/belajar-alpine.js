@@ -11,13 +11,12 @@
     <body>
         <div
             class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow"
-            x-data="{ nama:'Ramandhika Ilham Pratama', angka: 20 }"
+            x-data="{ nama:'Ramandhika Ilham Pratama', angka: 20, url:'<a href=\'https://github.com/ramandhika/belajar-alpine.js\'>Ramandhika</a>'}"
         >
             <h1
                 class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent drop-shadow-sm"
             >
-                Halo , <span x-text="nama"></span> Angka <span x-text="angka"></span> adalah bilangan :
-                <span x-text="angka % 2 === 0 ? 'Genap' : 'Ganjil'"></span>
+                Halo , <span x-html="url"></span>
             </h1>
         </div>
     </body>
