@@ -20,11 +20,13 @@
             >
                 Buka
             </button>
-            <div x-show="open" class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolor perferendis distinctio voluptate
-                nulla, eum magni officia laudantium voluptates obcaecati minima nisi corporis quo eveniet ab dolorem
-                necessitatibus repellendus nihil.
-            </div>
+            <template x-if="open">
+                <div class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolor perferendis distinctio
+                    voluptate nulla, eum magni officia laudantium voluptates obcaecati minima nisi corporis quo eveniet
+                    ab dolorem necessitatibus repellendus nihil.
+                </div>
+            </template>
         </div>
     </body>
 </html>
