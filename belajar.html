@@ -21,6 +21,13 @@
                 color: white;
             }
 
+            .container > p {
+                margin-left: 20px;
+                margin-right: 20px;
+                font-size: 50px;
+                color: white;
+            }
+
             .container > button {
                 font-size: 50px;
                 padding: 2%;
@@ -33,6 +40,18 @@
             <button @click="hitung--">-</button>
             <span x-text="hitung">0</span>
             <button @click="hitung++">+</button>
+        </div>
+        <div x-data="{ nama : 'Ramandhika' }" class="container">
+            <span x-text="nama"></span>
+        </div>
+        <div
+            x-data="{ 
+            nama: 'Ramandhika Ilham Pratama',
+            umur: '22'}"
+            class="container"
+        >
+            <p>Nama : <span x-text="nama"></span></p>
+            <p>Umur : <span x-text="umur"></span></p>
         </div>
     </body>
 </html>
