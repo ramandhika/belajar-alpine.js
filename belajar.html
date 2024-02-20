@@ -10,14 +10,21 @@
     </head>
     <body>
         <div
+            x-data="{ open: false }"
             class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow"
-            x-data="{ nama:'Ramandhika Ilham Pratama', angka: 20, url:'<a href=\'https://github.com/ramandhika/belajar-alpine.js\'>Ramandhika</a>'}"
         >
-            <h1
-                class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent drop-shadow-sm"
+            <button
+                @click="open = !open"
+                x-text="open ? 'Tutup' : 'Buka'"
+                class="py-2 px-5 bg-slate-600 text-white rounded-md"
             >
-                Halo , <span x-html="url"></span>
-            </h1>
+                Buka
+            </button>
+            <div x-show="open" class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolor perferendis distinctio voluptate
+                nulla, eum magni officia laudantium voluptates obcaecati minima nisi corporis quo eveniet ab dolorem
+                necessitatibus repellendus nihil.
+            </div>
         </div>
     </body>
 </html>
