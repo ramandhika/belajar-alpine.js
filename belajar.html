@@ -10,9 +10,16 @@
     </head>
     <body>
         <div
-            x-data="{ open: false }"
-            class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow"
+            x-data="{ open: false, buka: false }"
+            x-bind:class="buka ? 'bg-gray-200' : 'bg-lime-200'"
+            class="container mx-auto w-1/2 text-center mt-10 p-10 rounded-xl shadow"
         >
+            <button
+                @click="buka = !buka"
+                x-text="'Ganti Warna'"
+                x-bind:class="buka ? 'border border-red-600 text-black bg-red-200 font-bold' : 'bg-slate-600'"
+                class="py-2 px-5 text-white rounded-md text-start"
+            ></button>
             <button
                 @click="open = !open"
                 x-text="open ? 'Tutup' : 'Buka'"
