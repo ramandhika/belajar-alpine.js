@@ -8,7 +8,11 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <style></style>
     </head>
-    <body x-data="{ pesan: 'hello wpu', ubahWarna : false }" @keyup.slash="ubahWarna = !ubahWarna">
+    <body
+        x-data="{ pesan: 'hello wpu', ubahWarna : false }"
+        @keyup.slash="ubahWarna = !ubahWarna"
+        @catatan="alert('Hallo maniezzz, ' + $event.detail.nama)"
+    >
         <div
             x-bind:class="ubahWarna ? 'bg-red-200' : 'bg-gray-200'"
             class="container mx-auto w-3/4 text-center mt-10 p-10 rounded-xl shadow"
@@ -19,6 +23,12 @@
                 @keyup.shift.enter="alert('diisii bangg')"
                 class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             />
+            <button
+                @click="$dispatch('catatan', { nama : 'Ramandhika'})"
+                class="py-2 px-5 text-white rounded-md bg-slate-500 mt-3"
+            >
+                Klik aku bangg
+            </button>
         </div>
     </body>
 </html>
