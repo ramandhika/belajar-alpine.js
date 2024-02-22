@@ -8,8 +8,11 @@
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <style></style>
     </head>
-    <body x-data="{ pesan: 'hello wpu' }" @keyup.slash="alert('mau ngapain bangh ?')">
-        <div class="container mx-auto w-3/4 text-center mt-10 p-10 rounded-xl shadow bg-gray-200">
+    <body x-data="{ pesan: 'hello wpu', ubahWarna : false }" @keyup.slash="ubahWarna = !ubahWarna">
+        <div
+            x-bind:class="ubahWarna ? 'bg-red-200' : 'bg-gray-200'"
+            class="container mx-auto w-3/4 text-center mt-10 p-10 rounded-xl shadow"
+        >
             <label for="nama" class="text-sm font-medium text-grey-900 block mb-2">Masukkan Nama</label>
             <input
                 type="text"
