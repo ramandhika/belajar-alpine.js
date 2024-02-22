@@ -32,7 +32,8 @@
                 x-show="open"
                 x-transition:enter.origin.bottom.right.duration.700ms
                 x-transition:leave.origin.top.left.duration.500ms
-                class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white"
+                x-bind:class="buka ? 'bg-slate-600' : 'bg-blue-200 text-black'"
+                class="w-3/4 mx-auto mt-4 p-5 rounded text-white"
             >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolor perferendis distinctio voluptate
                 nulla, eum magni officia laudantium voluptates obcaecati minima nisi corporis quo eveniet ab dolorem
