@@ -10,25 +10,25 @@
     </head>
     <body
         x-data="{ pesan: 'hello wpu', ubahWarna : false }"
-        @keyup.slash="ubahWarna = !ubahWarna"
-        @catatan="alert('Hallo maniezzz, ' + $event.detail.nama)"
+        @keyup.slash="ubahWarna = !ubahWarna""
     >
         <div
             x-bind:class="ubahWarna ? 'bg-red-200' : 'bg-gray-200'"
             class="container mx-auto w-3/4 text-center mt-10 p-10 rounded-xl shadow"
         >
-            <label for="nama" class="text-sm font-medium text-grey-900 block mb-2">Masukkan Nama</label>
-            <input
-                type="text"
-                @keyup.shift.enter="alert('diisii bangg')"
-                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            />
-            <button
-                @click="$dispatch('catatan', { nama : 'Ramandhika'})"
-                class="py-2 px-5 text-white rounded-md bg-slate-500 mt-3"
-            >
-                Klik aku bangg
-            </button>
+            <form action="/post" @submit.prevent="alert('data dikirim oleh alpine')">
+                <label for="nama" class="text-sm font-medium text-grey-900 block mb-2">Masukkan Nama</label>
+                <input
+                    type="text"
+                    @keyup.shift.enter="alert('diisii bangg')"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                />
+                <button
+                    class="py-2 px-5 text-white rounded-md bg-slate-500 mt-3"
+                >
+                    Klik aku bangg
+                </button>
+            </form>
         </div>
     </body>
 </html>
