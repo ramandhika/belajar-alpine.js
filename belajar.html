@@ -17,7 +17,7 @@
                 Klik saya
             </button>
             <button
-                @click="console.dir($event.target.classList.add('bg-red-500'))"
+                @click="ubahWarna"
                 id="tombolpesan"
                 data-pesan="hello world"
                 class="py-2 px-5 text-white rounded-md bg-slate-600"
@@ -26,4 +26,9 @@
             </button>
         </div>
     </body>
+    <script>
+        function ubahWarna(e) {
+            e.target.classList.add('bg-red-500');
+        }
+    </script>
 </html>
