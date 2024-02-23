@@ -41,7 +41,7 @@
             </div>
         </div>
         <div
-            x-data="{ pesan:'' }"
+            x-data="{ pesan:'', open: true, hobby: [] }"
             x-bind:class="ubahWarna ? 'bg-red-200' : 'bg-gray-200'"
             class="container mx-auto w-3/4 text-center mt-10 p-10 rounded-xl shadow"
         >
@@ -57,9 +57,51 @@
                 x-bind:class="pesan.length > 20 ? 'text-red-500' : ''"
                 class="mt-5 flex font-bold text-2xl text-green-500"
             ></span>
+
+            <input x-model="open" type="checkbox" name="" id="checkbox" />
+            <label x-text="!open? 'Kosong' : 'Terisi'" for="checkbox"></label>
             <!-- <button class="py-2 px-5 text-white rounded-md bg-slate-500 mt-3">
                 Klik aku bangg
             </button> -->
+
+            <div class="mt-5">
+                <div class="flex items-center mb-2">
+                    <input
+                        type="checkbox"
+                        x-model="hobby"
+                        name=""
+                        id="menulis"
+                        value="menulis"
+                        class="w-4 h-4 text-blue-500 border-gray-300 rounded"
+                    />
+                    <label for="menulis" class="ml-2 text-sm">Menulis</label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input
+                        type="checkbox"
+                        x-model="hobby"
+                        name=""
+                        id="membaca"
+                        value="membaca"
+                        class="w-4 h-4 text-blue-500 border-gray-300 rounded"
+                    />
+                    <label for="membaca" class="ml-2 text-sm">Membaca</label>
+                </div>
+                <div class="flex items-center mb-2">
+                    <input
+                        type="checkbox"
+                        x-model="hobby"
+                        name=""
+                        id="gameing"
+                        value="gameing"
+                        class="w-4 h-4 text-blue-500 border-gray-300 rounded"
+                    />
+                    <label for="gameing" class="ml-2 text-sm">Gameing</label>
+                </div>
+                <p class="text-left text-sm">
+                    Hobby : <span x-text="hobby.map(h => h.charAt(0).toUpperCase() + h.slice(1))"></span>
+                </p>
+            </div>
         </div>
     </body>
 </html>
