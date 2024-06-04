@@ -1,107 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Alpine.Js</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-        <style></style>
-    </head>
-    <body x-data="{ ubahWarna : false }" @keyup.slash="ubahWarna = !ubahWarna">
-        <div
-            x-data="{ open: false, buka: false }"
-            x-bind:class="buka ? 'bg-gray-200' : 'bg-lime-200'"
-            class="container mx-auto w-1/2 text-center mt-10 p-10 rounded-xl shadow"
-        >
-            <button
-                @click="buka = !buka"
-                x-text="'Ganti Warna'"
-                x-bind:class="buka ? 'border border-red-600 text-black bg-red-200 font-bold' : 'bg-slate-600'"
-                class="py-2 px-5 text-white rounded-md text-start"
-            ></button>
-            <button
-                @click="open = !open"
-                @keyup.esc.window="open = false"
-                x-text="open ? 'Tutup' : 'Buka'"
-                x-bind:class="open ? 'border border-red-600 text-black bg-red-200 font-bold' : 'bg-slate-600'"
-                class="py-2 px-5 text-white rounded-md"
-            >
-                Buka
-            </button>
-            <div
-                x-show="open"
-                x-transition:enter.origin.bottom.right.duration.700ms
-                x-transition:leave.origin.top.left.duration.500ms
-                class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white"
-            >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolor perferendis distinctio voluptate
-                nulla, eum magni officia laudantium voluptates obcaecati minima nisi corporis quo eveniet ab dolorem
-                necessitatibus repellendus nihil.
-            </div>
-        </div>
-        <div
-            x-data="{ pesan:'', open: true, hobby: [] }"
-            x-bind:class="ubahWarna ? 'bg-red-200' : 'bg-gray-200'"
-            class="container mx-auto w-3/4 text-center mt-10 p-10 rounded-xl shadow"
-        >
-            <label for="nama" class="text-sm font-medium text-grey-900 block mb-2">Masukkan Pesan</label>
-            <input
-                x-model="pesan"
-                x-bind:disabled="pesan.length >= 25"
-                type="text"
-                class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            />
-            <span
-                x-text="pesan.length"
-                x-bind:class="pesan.length > 20 ? 'text-red-500' : ''"
-                class="mt-5 flex font-bold text-2xl text-green-500"
-            ></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpine.Js</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <style></style>
+  </head>
+  <body x-data="{ ubahWarna : false }" @keyup.slash="ubahWarna = !ubahWarna">
+    <div
+      x-data="{ open: false, buka: false }"
+      x-bind:class="buka ? 'bg-gray-200' : 'bg-lime-200'"
+      class="container mx-auto w-1/2 text-center mt-10 p-10 rounded-xl shadow"
+    >
+      <button
+        @click="buka = !buka"
+        x-text="'Ganti Warna'"
+        x-bind:class="buka ? 'border border-red-600 text-black bg-red-200 font-bold' : 'bg-slate-600'"
+        class="py-2 px-5 text-white rounded-md text-start"
+      ></button>
+      <button
+        @click="open = !open"
+        @keyup.esc.window="open = false"
+        x-text="open ? 'Tutup' : 'Buka'"
+        x-bind:class="open ? 'border border-red-600 text-black bg-red-200 font-bold' : 'bg-slate-600'"
+        class="py-2 px-5 text-white rounded-md"
+      >
+        Buka
+      </button>
+      <div
+        x-show="open"
+        x-transition:enter.origin.bottom.right.duration.700ms
+        x-transition:leave.origin.top.left.duration.500ms
+        class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white"
+      >
+        Cuma test doang bang.
+      </div>
+    </div>
+    <div
+      x-data="{ pesan:'', open: true, hobby: [] }"
+      x-bind:class="ubahWarna ? 'bg-red-200' : 'bg-gray-200'"
+      class="container mx-auto w-3/4 text-center mt-10 p-10 rounded-xl shadow"
+    >
+      <label for="nama" class="text-sm font-medium text-grey-900 block mb-2"
+        >Masukkan Pesan</label
+      >
+      <input
+        x-model="pesan"
+        x-bind:disabled="pesan.length >= 25"
+        type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+      />
+      <span
+        x-text="pesan.length"
+        x-bind:class="pesan.length > 20 ? 'text-red-500' : ''"
+        class="mt-5 flex font-bold text-2xl text-green-500"
+      ></span>
 
-            <input x-model="open" type="checkbox" name="" id="checkbox" />
-            <label x-text="!open? 'Kosong' : 'Terisi'" for="checkbox"></label>
-            <!-- <button class="py-2 px-5 text-white rounded-md bg-slate-500 mt-3">
+      <input x-model="open" type="checkbox" name="" id="checkbox" />
+      <label x-text="!open? 'Kosong' : 'Terisi'" for="checkbox"></label>
+      <!-- <button class="py-2 px-5 text-white rounded-md bg-slate-500 mt-3">
                 Klik aku bangg
             </button> -->
 
-            <div class="mt-5">
-                <div class="flex items-center mb-2">
-                    <input
-                        type="checkbox"
-                        x-model="hobby"
-                        name=""
-                        id="menulis"
-                        value="menulis"
-                        class="w-4 h-4 text-blue-500 border-gray-300 rounded"
-                    />
-                    <label for="menulis" class="ml-2 text-sm">Menulis</label>
-                </div>
-                <div class="flex items-center mb-2">
-                    <input
-                        type="checkbox"
-                        x-model="hobby"
-                        name=""
-                        id="membaca"
-                        value="membaca"
-                        class="w-4 h-4 text-blue-500 border-gray-300 rounded"
-                    />
-                    <label for="membaca" class="ml-2 text-sm">Membaca</label>
-                </div>
-                <div class="flex items-center mb-2">
-                    <input
-                        type="checkbox"
-                        x-model="hobby"
-                        name=""
-                        id="gameing"
-                        value="gameing"
-                        class="w-4 h-4 text-blue-500 border-gray-300 rounded"
-                    />
-                    <label for="gameing" class="ml-2 text-sm">Gameing</label>
-                </div>
-                <p class="text-left text-sm">
-                    Hobby : <span x-text="hobby.map(h => h.charAt(0).toUpperCase() + h.slice(1))"></span>
-                </p>
-            </div>
+      <div class="mt-5">
+        <div class="flex items-center mb-2">
+          <input
+            type="checkbox"
+            x-model="hobby"
+            name=""
+            id="menulis"
+            value="menulis"
+            class="w-4 h-4 text-blue-500 border-gray-300 rounded"
+          />
+          <label for="menulis" class="ml-2 text-sm">Menulis</label>
         </div>
-    </body>
+        <div class="flex items-center mb-2">
+          <input
+            type="checkbox"
+            x-model="hobby"
+            name=""
+            id="membaca"
+            value="membaca"
+            class="w-4 h-4 text-blue-500 border-gray-300 rounded"
+          />
+          <label for="membaca" class="ml-2 text-sm">Membaca</label>
+        </div>
+        <div class="flex items-center mb-2">
+          <input
+            type="checkbox"
+            x-model="hobby"
+            name=""
+            id="gameing"
+            value="gameing"
+            class="w-4 h-4 text-blue-500 border-gray-300 rounded"
+          />
+          <label for="gameing" class="ml-2 text-sm">Gameing</label>
+        </div>
+        <p class="text-left text-sm">
+          Hobby :
+          <span
+            x-text="hobby.map(h => h.charAt(0).toUpperCase() + h.slice(1))"
+          ></span>
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
